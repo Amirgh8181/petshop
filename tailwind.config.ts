@@ -14,8 +14,12 @@ const config: Config = {
       xl: "1440px",
     },
     extend: {
+      colors:{
+        petBlue:"#575CEE",
+        petBg:"#EFF1FD"
+      },
       fontFamily: {
-        jost: ['var(--font-jost)'],
+        roboto: ['var(--font-roboto)'],
       },
     },
   },

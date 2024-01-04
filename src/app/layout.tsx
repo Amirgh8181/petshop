@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
-import { Jost } from 'next/font/google'
-import '../assests/styles/globals.css'
+import { Roboto } from 'next/font/google'
+import '@/assests/styles/globals.css'
+import NavBar from '@/components/NavBar'
 
-const jost=Jost({
-  subsets:['latin'],
-  preload:true,
-  variable: '--font-jost',
-  fallback:['system-ui', 'sans']
+const roboto = Roboto({
+  weight: ["100", '300', '400', '500', '700', '900'],
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  fallback: ['system-ui', 'sans']
 })
 
 export const metadata: Metadata = {
@@ -30,8 +31,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={jost.className}>
-        {children}
+
+      <body className={`${roboto.className} bg-petBg text-black pt-12`}>
+        <nav>
+          <NavBar/>
+        </nav>
+        <main className='mt-6'>
+          {children}
+        </main>
       </body>
     </html>
   )

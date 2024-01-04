@@ -9,3 +9,7 @@ html,
 body {
   scroll-behavior: smooth;
 }
+
+h1{
+  @apply text-7xl font-bold
+}
