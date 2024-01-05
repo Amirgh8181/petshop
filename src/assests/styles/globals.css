@@ -11,5 +11,5 @@ body {
 }
 
 h1{
-  @apply text-7xl font-bold
+  @apply md:text-7xl text-2xl font-bold
 }
