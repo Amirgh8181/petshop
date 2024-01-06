@@ -5,6 +5,40 @@ const Home = () => {
   return (
     <div>
       <HeroSection/>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
+      <div>hel</div>
     </div>
   )
 }

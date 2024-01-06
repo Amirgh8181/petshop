@@ -10,6 +10,3 @@ body {
   scroll-behavior: smooth;
 }
 
-h1{
-  @apply md:text-7xl text-2xl font-bold
-}

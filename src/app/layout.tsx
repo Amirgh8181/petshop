@@ -7,7 +7,6 @@ const roboto = Roboto({
   weight: ["100", '300', '400', '500', '700', '900'],
   subsets: ['latin'],
   variable: '--font-roboto',
-  fallback: ['system-ui', 'sans']
 })
 
 export const metadata: Metadata = {
@@ -32,11 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className={`${roboto.className} bg-petBg text-black pt-12`}>
+      <body className={`${roboto.className} bg-petBg text-black`}>
         <nav>
           <NavBar/>
         </nav>
-        <main className='mt-6'>
+        <main className='mt-8 pt-12'>
           {children}
         </main>
       </body>
