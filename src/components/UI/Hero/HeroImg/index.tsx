@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { AiOutlineSafety } from "react-icons/ai";
 
 const HeroImage = () => {
 
