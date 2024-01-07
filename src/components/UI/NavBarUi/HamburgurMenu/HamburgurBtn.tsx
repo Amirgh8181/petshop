@@ -5,7 +5,6 @@ import { IoMenu } from "react-icons/io5"
 
 
 const HamburgurBtn = ({setMobileMenu}:{setMobileMenu:()=>void}) => {
-    console.log('hello');
 
     return (
         <div

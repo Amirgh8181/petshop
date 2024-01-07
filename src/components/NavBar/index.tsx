@@ -8,7 +8,6 @@ import { useMediaQuery } from '@mui/material'
 
 const NavBar = () => {
     const mdScreen = useMediaQuery('(min-width:768px)');
-    console.log(mdScreen);
 
     return (
         <div className='w-full flex justify-between px-3 md:px-0  md:justify-around items-center fixed top-0 z-40 bg-white h-16'>
