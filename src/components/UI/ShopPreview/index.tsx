@@ -7,7 +7,7 @@ import MobileSlider from './MobileSlider';
 const SliderPreviewShop = () => {
     const mdScreen = useMediaQuery('(min-width:768px)');
     return (
-        <div className=''>
+        <div>
             {mdScreen ? <MdSlider /> : <MobileSlider />}
         </div>
     )

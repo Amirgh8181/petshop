@@ -5,7 +5,7 @@ import HeroImage from '../UI/Hero/HeroImg'
 const HeroSection = () => {
     return (
         <section id='hero'>
-            <div className='lg:w-[70vw] md:container w-[90vw] md:h-[50vh] h-[30vh] 
+            <div className='lg:w-[70vw] md:container w-[90vw] md:h-[50vh] h-[35vh] 
             bg-petBlue rounded-3xl flex mx-auto'
             >
                 <div className='w-1/2'>

@@ -10,16 +10,19 @@ const MdSlider = () => {
         target: carousel
     })
 
-    const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%'])
+    const x = useTransform(scrollYProgress, [0, 1], ['0%', '-145%'])
 
     return (
-        <motion.div ref={carousel} className="relative md:h-[300vh] z-30">
-            <div className="sticky inset-0 md:h-[110vh] h-screen flex items-center overflow-hidden">
-                <motion.div style={{ x }} className='flex md:gap-6'>
-                    <ProduceCard />
-                </motion.div>
-            </div>
-        </motion.div>
+        <>
+
+            <motion.div ref={carousel} className="relative md:h-[600vh] z-30">
+                <div className="sticky inset-0  h-[110vh] flex items-center overflow-hidden">
+                    <motion.div style={{ x }} className='flex md:gap-4'>
+                        <ProduceCard />
+                    </motion.div>
+                </div>
+            </motion.div>
+        </>
     )
 }
 
