@@ -1,22 +1,18 @@
 import React from 'react'
+import BlogPreviewUi from '../UI/BlogPreview'
 
-import SliderPreviewShop from '../UI/ShopPreview';
-const ShopPreview = () => {
-
-
-
-
+const BlogPreview = () => {
     return (
-        <section id="ShopPreview" className='w-full'>
+        <section id="BlogPreview" className='w-full'>
             <div className='flex items-center justify-between md:px-20 px-4'>
-                <div className='text-4xl'>Shop</div>
+                <div className='text-4xl'>Blog</div>
                 <div className='text-xl hover:text-petBlue cursor-pointer'>More</div>
             </div>
             <div className='mt-4'>
-                <SliderPreviewShop />
+                <BlogPreviewUi />
             </div>
         </section>
     )
 }
 
-export default ShopPreview
+export default BlogPreview

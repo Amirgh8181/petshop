@@ -1,4 +1,5 @@
 import AboutUs from '@/components/About-US'
+import BlogPreview from '@/components/BlogPreview'
 import HeroSection from '@/components/Hero'
 import ShopPreview from '@/components/ShopPreview'
 import React from 'react'
@@ -15,39 +16,9 @@ const Home = () => {
       <div className='md:mt-32 mt-16'>
         <ShopPreview />
       </div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
-      <div>hel</div>
+      <div className='md:mt-32 mt-16'>
+        <BlogPreview />
+      </div>
     </div>
   )
 }
