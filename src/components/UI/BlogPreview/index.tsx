@@ -23,13 +23,13 @@ const BlogPreviewUi = () => {
     <motion.div className='w-full flex flex-wrap gap-4 justify-center my-4'>
       {BlogPreviewItem.map(item =>
         <motion.div key={item.description} 
-        className='max-w-[27vw] flex flex-col border-2 border-petBlue rounded-[3.5rem]'
+        className='max-w-[27vw] md:h-auto h-[30%]  flex flex-col border-2 border-petBlue rounded-[3.5rem]'
         initial={{scale:0,opacity:0}}
         whileInView={{scale:1,opacity:1}}
         >
           <Image src={item.image} alt='BlogPreview' width={200} height={200} className='w-full h-[40vh] relative inset-0 rounded-t-[3.5rem]'/>
-          <div className='text-left text-bold text-lg p-2 font-bold'>{item.title}</div>
-          <div className='text-left px-4 pb-4'>{item.description}</div>
+          <div className='text-left text-bold md:text-lg text-base p-2 font-bold'>{item.title}</div>
+          <div className='text-left px-4 pb-4 text-xs text-ellipsis overflow-hidden text-nowrap'>{item.description}</div>
         </motion.div>
       )}
     </motion.div>

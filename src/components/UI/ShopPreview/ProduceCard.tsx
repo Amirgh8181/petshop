@@ -13,12 +13,12 @@ interface hardcodeshop {
 const ProduceCard = () => {
 
     const shopItem: hardcodeshop[] = [
-        { image: "/images/ShopPreview/pet-food.png", title: "Cat Food Reflex", price: "$55" },
-        { image: "/images/ShopPreview/pet-food.png", title: "Cat Food Reflex", price: "$55" },
-        { image: "/images/ShopPreview/pet-food.png", title: "Cat Food Reflex", price: "$55" },
-        { image: "/images/ShopPreview/pet-food.png", title: "Cat Food Reflex", price: "$55" },
-        { image: "/images/ShopPreview/pet-food.png", title: "Cat Food Reflex", price: "$55" },
-        { image: "/images/ShopPreview/pet-food.png", title: "Cat Food Reflex", price: "$55" },
+        { image: "/images/ShopPreview/aa.jpg", title: "Cat Food Reflex", price: "$55" },
+        { image: "/images/ShopPreview/aa.jpg", title: "Cat Food Reflex", price: "$55" },
+        { image: "/images/ShopPreview/aa.jpg", title: "Cat Food Reflex", price: "$55" },
+        { image: "/images/ShopPreview/aa.jpg", title: "Cat Food Reflex", price: "$55" },
+        { image: "/images/ShopPreview/aa.jpg", title: "Cat Food Reflex", price: "$55" },
+        { image: "/images/ShopPreview/aa.jpg", title: "Cat Food Reflex", price: "$55" },
     ]
 
     return (

@@ -13,7 +13,7 @@ const AboutUsImage = () => {
 
         <div className='order-2 md:order-1 flex justify-end items-center md:w-1/2 mt-8 md:mt-0'>
             <motion.div
-                className=' border-[20px] border-t-petBlue border-b-petBlue rounded-full flex items-center
+                className=' border-[20px] border-l-petBlue border-t-petBlue border-b-petBlue rounded-full flex items-center
               justify-center'
             >
                 <Image src={'/images/about-us/about-us.png'} alt='about-us' width={300} height={300}

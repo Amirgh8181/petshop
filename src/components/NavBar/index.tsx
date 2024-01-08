@@ -10,7 +10,7 @@ const NavBar = () => {
     const mdScreen = useMediaQuery('(min-width:768px)');
 
     return (
-        <div className='w-full flex justify-between px-3 md:px-0  md:justify-around items-center fixed top-0 z-40 bg-white h-16'>
+        <div className='w-full flex justify-between md:px-10 px-4  items-center fixed top-0 z-40 bg-white h-16'>
             <div>
                 <Logo />
             </div>

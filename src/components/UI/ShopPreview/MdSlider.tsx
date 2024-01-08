@@ -15,7 +15,7 @@ const MdSlider = () => {
     return (
         <>
 
-            <motion.div ref={carousel} className="relative md:h-[600vh] z-30">
+            <motion.div ref={carousel} className="relative md:h-[300vh] z-30">
                 <div className="sticky inset-0  h-[110vh] flex items-center overflow-hidden">
                     <motion.div style={{ x }} className='flex md:gap-4'>
                         <ProduceCard />
