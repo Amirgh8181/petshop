@@ -1,6 +1,7 @@
 import AboutUs from '@/components/About-US'
 import BlogPreview from '@/components/BlogPreview'
 import HeroSection from '@/components/Hero'
+import QuestionContainer from '@/components/QuestionSection'
 import ShopPreview from '@/components/ShopPreview'
 import React from 'react'
 
@@ -15,6 +16,9 @@ const Home = () => {
       </div>
       <div>
         <ShopPreview />
+      </div>
+      <div>
+        <QuestionContainer/>
       </div>
       <div>
         <BlogPreview />
