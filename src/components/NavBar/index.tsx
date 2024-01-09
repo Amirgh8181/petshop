@@ -11,7 +11,7 @@ const NavBar = () => {
 
     return (
         <div className='w-full flex justify-between md:px-10 px-4  items-center fixed top-0 z-40 bg-white h-16'>
-            <div>
+            <div className='scale-125'>
                 <Logo />
             </div>
             <div className='hidden md:block'>

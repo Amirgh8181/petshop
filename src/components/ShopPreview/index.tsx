@@ -1,20 +1,20 @@
-import React from 'react'
-
-import SliderPreviewShop from '../UI/ShopPreview';
+"use client"
+import { useMediaQuery } from '@mui/material';
+import MdSlider from '../UI/ShopPreview/MdSlider';
+import MobileSlider from '../UI/ShopPreview/MobileSlider';
 const ShopPreview = () => {
 
 
+    const mdScreen = useMediaQuery('(min-width:768px)');
 
 
     return (
         <section id="ShopPreview" className='w-full'>
-            <div className='flex items-center justify-between md:px-20 px-4'>
-                <div className='text-4xl'>Shop</div>
-                <div className='text-xl hover:text-petBlue cursor-pointer'>More</div>
-            </div>
-            <div className='mt-4'>
-                <SliderPreviewShop />
-            </div>
+            {
+                <div>
+                    {mdScreen ? <MdSlider /> : <MobileSlider />}
+                </div>
+            }
         </section>
     )
 }

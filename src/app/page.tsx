@@ -10,13 +10,13 @@ const Home = () => {
       <div>
         <HeroSection />
       </div>
-      <div className='md:mt-32 mt-16'>
+      <div className='mt-16'>
         <AboutUs />
       </div>
-      <div className='md:mt-32 mt-16'>
+      <div>
         <ShopPreview />
       </div>
-      <div className='md:mt-32 mt-16'>
+      <div>
         <BlogPreview />
       </div>
     </div>

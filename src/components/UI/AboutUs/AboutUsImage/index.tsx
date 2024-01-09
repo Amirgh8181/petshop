@@ -11,13 +11,13 @@ const AboutUsImage = () => {
 
     return (
 
-        <div className='order-2 md:order-1 flex justify-end items-center md:w-1/2 mt-8 md:mt-0'>
+        <div className='md:w-1/2 order-2 md:order-1 flex justify-center items-center mt-8 md:mt-0  md:justify-end'>
             <motion.div
-                className=' border-[20px] border-l-petBlue border-t-petBlue border-b-petBlue rounded-full flex items-center
-              justify-center'
-            >
-                <Image src={'/images/about-us/about-us.png'} alt='about-us' width={300} height={300}
-                    className='w-[50vw] md:w-full aspect-square rounded-full origin-center self-center'
+                className='border-[20px] border-l-petBlue border-t-petBlue border-b-petBlue rounded-full
+                md:w-[60%] w-[50vw] aspect-square overflow-hidden 
+                '>
+                <Image src={'/images/about-us/about-us.png'} alt='about-us' width={400} height={400}
+                    className=''
                 />
             </motion.div>
         </div>
@@ -25,3 +25,10 @@ const AboutUsImage = () => {
 }
 
 export default AboutUsImage
+
+
+/*
+                <Image src={'/images/about-us/about-us.png'} alt='about-us' width={300} height={300}
+                    className='aspect-square rounded-full origin-top'
+                />
+*/

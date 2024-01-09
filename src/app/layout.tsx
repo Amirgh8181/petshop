@@ -36,7 +36,7 @@ export default function RootLayout({
         <nav>
           <NavBar/>
         </nav>
-        <main className='mt-16'>
+        <main className='pt-16'>
           {children}
         </main>
         <footer className='mt-8 pt-12'> 
