@@ -1,9 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
-
-const Logo = () => {
+interface LogoProps{
+    width:number,
+    height:number
+}
+const Logo = ({width,height}:LogoProps) => {
     return (
-        <Image src={'/images/logo/logo-text-black.png'} alt='logo' width={100} height={100} priority={true}
+        <Image src={'/images/logo/logo-text-black.png'} alt='logo' width={width} height={height} priority={true}
             className='mt-1' />
     )
 }

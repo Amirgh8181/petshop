@@ -29,7 +29,7 @@ const BlogPreviewUi = () => {
         >
           <Image src={item.image} alt='BlogPreview' width={200} height={200} className='w-full h-[40vh] relative inset-0 rounded-t-[3.5rem]' />
           <div className='text-left text-bold md:text-lg text-base px-8 font-bold'>{item.title}</div>
-          <div className='text-left px-8 pb-6 text-xs text-ellipsis overflow-hidden text-nowrap'>{item.description}</div>
+          <div className='text-left px-8 pb-6 text-xs truncate'>{item.description}</div>
         </motion.div>
       )
       }
