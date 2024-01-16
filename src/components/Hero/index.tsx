@@ -24,7 +24,7 @@ const HeroSection = () => {
 
     return (
         <section id='hero'>
-            <div className='absolute top-0 w-full h-screen bg-petBlue'>
+            <div className='absolute top-0 w-full min-h-screen bg-petBlue'>
             </div>
             <div className="relative z-10 flex justify-center items-center w-full h-[90vh]">
                 <motion.div variants={heroContainer} initial="initial" animate="animate" className='w-[90vw] h-[75vh] bg-gradient-to-tr from-petBlue/60 via-violet-500/80 to-petBlue shadow-2xl rounded-3xl md:p-7

@@ -43,7 +43,7 @@ export default function RootLayout({
             <main className='pt-16'>
               {children}
             </main>
-            <footer className=' pt-12'>
+            <footer className='pt-12'>
               <Footer />
             </footer>
           </NextUiProviders>

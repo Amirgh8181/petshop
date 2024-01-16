@@ -7,15 +7,15 @@ import { motion } from 'framer-motion'
 const QuestionImage = () => {
 
 
-    const images = [
-        {img:'' , class:"col-start-1 col-end-2 "},
-        {img:'/images/Hero/2.jpg' , class:"col-start-2 col-end-3 "},
-        {img:'/images/Hero/3.jpg' , class:"col-start-1 col-end-2 "},
-        {img:'/images/Hero/4.jfif' , class:"col-start-2 col-end-3 "},
+    const imgCol1 = [
+        { img: '/images/QuestionSection/2.png' },
+        { img: '/images/QuestionSection/4.png' },
 
     ];
-
-
+    const imgCol2 = [
+        { img: '/images/QuestionSection/1.png', class: "col-start-2 col-end-3 row-start-1 row-end-2 w-[80%]" },
+        { img: '/images/QuestionSection/3.png', class: "col-start-2 col-end-3 row-start-3 row-end-4 w-[80%]" },
+    ]
     const heroImgContainerVar = {
         initial: {
             opacity: 0,
@@ -23,7 +23,7 @@ const QuestionImage = () => {
         animate: {
             opacity: 1,
             transition: {
-                delay:1,
+                delay: 1,
                 staggerChildren: 0.3,
                 when: 'beforeChildren'
             }
@@ -43,30 +43,25 @@ const QuestionImage = () => {
         },
     }
     return (
-        <motion.div variants={heroImgContainerVar} initial='initial' animate='animate'
-            className='w-full md:h-full h-[50%] flex justify-center items-center gap-6'>
-            
-            
-                <motion.div variants={heroImgVar} className='space-y-6 pt-12'>
-                    <Image src={'/images/Hero/1.jpg'} alt='hero-dog' width={200} height={200} priority={true} quality={100}
-                        className='rounded-l-full rounded-b-full aspect-square'
-                    />
-                    <Image src={'/images/Hero/2.jpg'} alt='hero-dog' width={200} height={200} priority={true} quality={100}
-                        className='rounded-l-full rounded-b-full aspect-square'
-                    />
-                </motion.div>
-                <motion.div variants={heroImgVar} className='space-y-6 pb-12'>
-                    <Image src={'/images/Hero/3.jpg'} alt='hero-dog' width={200} height={200} priority={true} quality={100}
-                        className='rounded-r-full rounded-t-full aspect-square'
-                    />
-                    <Image src={'/images/Hero/5.jpg'} alt='hero-dog' width={200} height={200} priority={true} quality={100}
-                        className='rounded-r-full rounded-t-full aspect-square'
-                    />
-                </motion.div>
+        <div
+            className='min-w-[70%] h-full flex gap-4'
+        >
+            <div className='w-1/2 h-full flex flex-col justify-center items-center gap-4 mt-10'>
+            {imgCol1.map(item =>
+                <Image src={item.img} width={175} height={175} alt='question'
+                     key={item.img} className='w-[80%] aspect-square'/>
+            )}
+            </div>
+            <div className='w-1/2 h-full flex flex-col justify-center items-center gap-4 mb-10'>
+            {imgCol2.map(item =>
+                <Image src={item.img} width={175} height={175} alt='question'
+                     key={item.img} className='w-[80%] aspect-square'/>
+            )}
+            </div>
 
 
 
-        </motion.div>
+        </div>
     )
 }
 

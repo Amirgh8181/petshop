@@ -1,11 +1,34 @@
-
 "use client"
 import React from 'react'
-import HeroImage from '../UI/Hero/HeroImg'
+import QuestionText from '../UI/QuestionSection/QuestionText';
+import QuestionImage from '../UI/QuestionSection/QuestionImage';
+const QuestionContainer = () => {
+
+    return (
+        <div className='w-full min-h-screen flex flex-col md:flex-row items-center justify-center bg-petBlue
+        space-y-4'
+        >
+            <div
+                className='md:w-1/2 w-full md:h-full h-1/4 flex items-center justify-center'
+            >
+                <QuestionText />
+            </div>
+            <div
+                className='md:w-1/2 w-full md:h-full h-3/4 flex items-center justify-center'
+            >
+                <QuestionImage />
+            </div>
+        </div>
+    )
+}
+
+export default QuestionContainer;
+
+
+/*
 import { motion } from 'framer-motion'
 import QuestionText from '../UI/QuestionSection/QuestionText'
 import QuestionImage from '../UI/QuestionSection/QuestionImage'
-const QuestionContainer = () => {
 
     const heroContainer = {
         initial: {
@@ -24,19 +47,7 @@ const QuestionContainer = () => {
         }
     }
 
-    return (
-            <motion.div variants={heroContainer} initial="initial" whileInView="animate" className='w-full h-screen bg-petBlue  p-7
-            flex flex-col md:flex-row items-center justify-center space-y-3'
 
-            >
-                <motion.div variants={heroContainer} className='md:w-1/2 w-full'>
-                    <QuestionText />
-                </motion.div>
-                <motion.div variants={heroContainer} className='md:w-1/2 w-full md:h-full flex items-center justify-center'>
                     <QuestionImage />
-                </motion.div>
-            </motion.div>
-    )
-}
 
-export default QuestionContainer;
+*/

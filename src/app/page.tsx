@@ -7,20 +7,20 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
+    <div className=''>
       <div>
         <HeroSection />
       </div>
-      <div className='mt-16'>
+      <div className='mt-12 md:mt-24'>
         <AboutUs />
       </div>
-      <div>
+      <div className='mt-12 md:mt-24'>
         <ShopPreview />
       </div>
-      <div>
+      <div className='mt-12 md:mt-24'>
         <QuestionContainer/>
       </div>
-      <div>
+      <div className='mt-12 md:mt-24'>
         <BlogPreview />
       </div>
     </div>
