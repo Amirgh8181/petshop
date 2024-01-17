@@ -3,9 +3,9 @@ import React from 'react'
 
 const UiCart = () => {
   return (
-    <div className='md:w-[60vw] w-[90vw] md:aspect-[16/6]  flex md:flex-row flex-col items-center justify-between rounded-[3.5rem] bg-petBlue'>
-      <div className='md:w-1/2'>
-        <Image src={'/images/Shop/uicart.png'} alt='ui cart img' width={500} height={700}
+    <div className='md:w-[60vw] w-[90vw] md:aspect-[16/6]  flex md:flex-row flex-col items-center justify-between rounded-[3.5rem] bg-petBlue overflow-hidden'>
+      <div className='md:w-1/2 w-full'>
+        <Image src={'/images/Shop/uicart.jfif'} alt='ui cart img' width={700} height={700}
           className='w-full h-full' />
       </div>
       <div className='flex flex-col items-center text-center md:text-left md:justify-center md:items-start
