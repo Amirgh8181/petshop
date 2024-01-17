@@ -16,8 +16,8 @@ const Profile = () => {
       <div className="flex items-center space-x-2">
         <Avatar size="sm">{session?.user.name}</Avatar>
         <DropdownTrigger>
-          <div className="flex items-center">
-            <span>Profile</span>
+          <div className="flex items-center cursor-pointer">
+            <span>{session?.user.name}</span>
             <span className="text-2xl"><RiArrowDropDownLine /></span>
           </div>
         </DropdownTrigger>

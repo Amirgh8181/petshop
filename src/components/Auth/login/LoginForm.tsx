@@ -17,8 +17,7 @@ import { useRouter } from 'next/navigation';
 import swal from 'sweetalert';
 import { Button, Input } from '@nextui-org/react';
 
-import { MdOutlineEmail } from "react-icons/md";
-
+import { MdLockOutline, MdOutlineEmail } from "react-icons/md";
 
 
 const LoginForm = () => {
@@ -71,12 +70,16 @@ const LoginForm = () => {
                 <Input
                     key={"email"}
                     type={"email"}
-                    label={"Email"}
+                    label={
+                        <div className='flex justify-center items-center space-x-1'>
+                            <div className='text-[#525252] text-xl'><MdOutlineEmail /></div>
+                            <div className='text-[#525252]'>Email</div>
+                        </div>
+                    }
                     labelPlacement='inside'
-                    placeholder={'Enter your email'}
                     {...register('email')}
-                    className='border border-petBlue rounded-lg'
-                />
+                    className='border border-petBlue rounded-full'
+                    radius='full'                />
                 {
                     errors.email?.message &&
                     <span className='text-red-600 ml-2 mt-2 text-xs'>
@@ -86,12 +89,16 @@ const LoginForm = () => {
                 <Input
                     key={"email"}
                     type={"password"}
-                    label={"Password"}
+                    label={
+                        <div className='flex justify-center items-center space-x-1'>
+                            <div className='text-[#525252] text-xl'><MdLockOutline /></div>
+                            <div className='text-[#525252]'>Password</div>
+                        </div>
+                    }
                     labelPlacement='inside'
-                    placeholder={'Enter your password'}
                     {...register('password')}
-                    className='border border-petBlue rounded-lg'
-                />
+                    className='border border-petBlue rounded-full'
+                    radius='full'                />
                 {
                     errors.password?.message &&
                     <span className='text-red-600 ml-2 mt-2 text-xs'>
@@ -105,7 +112,7 @@ const LoginForm = () => {
 
             <div className='mt-4'>
                 <span>Don’t have an account yet? </span>
-                <Link href={'/entryUser/SignUp'} className='text-blue-600'>SignUp</Link>
+                <Link href={'/entryUser/SignUp'} className='text-blue-600 underline'>SignUp</Link>
             </div>
 
 

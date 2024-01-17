@@ -24,7 +24,8 @@ import swal from 'sweetalert';
 
 //next-ui
 import { Button, Input } from '@nextui-org/react';
-
+import { MdOutlineEmail,MdLockOutline } from 'react-icons/md';
+import { FaUser } from "react-icons/fa";
 
 
 
@@ -82,12 +83,16 @@ const SignUpForm = () => {
                 <Input
                     key={"UserName"}
                     type={"text"}
-                    label={"UserName"}
+                    label={
+                        <div className='flex justify-center items-center space-x-1'>
+                            <div className='text-[#525252] text-xl'><FaUser /></div>
+                            <div className='text-[#525252]'>Name</div>
+                        </div>
+                    }
                     labelPlacement='inside'
-                    placeholder={'Enter your UserName'}
                     {...register('name')}
-                    className='border border-petBlue rounded-lg'
-                />
+                    className='border border-petBlue rounded-full'
+                    radius='full'                />
                 {
                     errors.name?.message &&
                     <span className='text-red-600 ml-2 mt-2 text-xs'>
@@ -97,12 +102,16 @@ const SignUpForm = () => {
                 <Input
                     key={"email"}
                     type={"email"}
-                    label={"Email"}
+                    label={
+                        <div className='flex justify-center items-center space-x-1'>
+                            <div className='text-[#525252] text-xl'><MdOutlineEmail /></div>
+                            <div className='text-[#525252]'>Email</div>
+                        </div>
+                    }
                     labelPlacement='inside'
-                    placeholder={'Enter your email'}
                     {...register('email')}
-                    className='border border-petBlue rounded-lg'
-                />
+                    className='border border-petBlue rounded-full'
+                    radius='full'                />
                 {
                     errors.email?.message &&
                     <span className='text-red-600 ml-2 mt-2 text-xs'>
@@ -112,11 +121,15 @@ const SignUpForm = () => {
                 <Input
                     key={"password"}
                     type={"password"}
-                    label={"Password"}
+                    label={
+                        <div className='flex justify-center items-center space-x-1'>
+                            <div className='text-[#525252] text-xl'><MdLockOutline /></div>
+                            <div className='text-[#525252]'>Password</div>
+                        </div>}
                     labelPlacement='inside'
-                    placeholder={'Enter your password'}
                     {...register('password')}
-                    className='border border-petBlue rounded-lg'
+                    className='border border-petBlue rounded-full'
+                    radius='full'
                 />
                 {
                     errors.password?.message &&
@@ -125,14 +138,14 @@ const SignUpForm = () => {
                     </span>
                 }
 
-                <Button disabled={loading} type="submit" className='bg-petBlue text-white w-full'>Submit</Button>
+                <Button disabled={loading} type="submit" className='md:text-xl h-12 bg-petBlue text-white w-full rounded-full'>Submit</Button>
 
             </form>
-
-
+                <div className='w-full h-[0.5px] border border-[#525252]/70 mt-[4vh]'></div>
+            <div className='w-full border'></div>
             <div className='mt-4'>
                 <span>you have existing account? </span>
-                <Link href={'/entryUser/Login'} className='text-blue-600'>login</Link>
+                <Link href={'/entryUser/Login'} className='text-blue-600 underline'>login</Link>
             </div>
         </div>
 

@@ -5,7 +5,7 @@ import React from 'react'
 const SignUpContainer = () => {
     return (
         <div>
-            <AuthHoc mainImage={"/images/AuthPic/signUp-main2.png"} leftImage={"/images/AuthPic/signUp-left.png"} rightImage={"/images/AuthPic/login-right.png"} authType={"SignUp"}>
+            <AuthHoc mainImage={"/images/AuthPic/signUp1.png"} leftImage={"/images/AuthPic/signUp2.png"} rightImage={"/images/AuthPic/login3.png"} authType={"SignUp"}>
                 <SignUpForm />
             </AuthHoc>
         </div >
