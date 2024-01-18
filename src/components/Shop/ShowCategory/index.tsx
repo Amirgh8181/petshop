@@ -1,4 +1,6 @@
+"use client"
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 interface categType {
@@ -21,11 +23,11 @@ const Category = () => {
             <div>Shop by collection</div>
             <div className='w-full flex justify-center mx-auto md:space-x-4 text-center'>
                 {categDetails.map(item =>
-                    <div key={item.type} className='group flex flex-col justify-center items-center space-y-2  cursor-pointer'>
+                    <Link href={`/Shop/Category?type=${item.type}`} key={item.type} className='group flex flex-col justify-center items-center space-y-2  cursor-pointer'>
                         <Image src={item.image} alt='categ img' width={100} height={100}
                             className='w-[65%] aspect-square rounded-full border shadow-xl group-hover:scale-110 transition-all duration-400' />
                         <div className='md:text-sm text-xs font-bold '>{item.type}</div>
-                    </div>
+                    </Link>
                 )}
             </div>
         </div>

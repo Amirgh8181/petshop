@@ -1,6 +1,6 @@
 import ShopHero from '@/components/Shop/ShopHero'
 import ProductPreview from '@/components/Shop/ShopItem'
-import Category from '@/components/Shop/category'
+import Category from '@/components/Shop/ShowCategory'
 import OtherSection from '@/components/Shop/othersection'
 import React from 'react'
 
