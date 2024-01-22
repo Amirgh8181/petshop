@@ -35,8 +35,8 @@ const Profile = () => {
             <span> Shopping Cart</span>
           </div>
         </DropdownItem>
-        <DropdownItem key="Log Out">
-          <div className="flex items-center space-x-2 text-red-500 "onClick={()=>signOut()}>
+        <DropdownItem key="Log Out" color="danger" className="text-danger">
+          <div className="flex items-center space-x-2"  onClick={()=>signOut()}>
             <span className="text-2xl"><BiLogIn /></span>
             <span className="font-bold"> Log Out</span>
           </div>

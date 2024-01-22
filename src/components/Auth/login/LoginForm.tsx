@@ -105,14 +105,15 @@ const LoginForm = () => {
                         {errors.password?.message}
                     </span>
                 }
-                <Button disabled={loading} type="submit" className='bg-petBlue text-white w-full'>Submit</Button>
+                <Button disabled={loading} type="submit" className='md:text-xl h-12 bg-petBlue text-white w-full rounded-full'>Submit</Button>
 
             </form>
 
-
+            <div className='w-full h-[0.5px] border border-[#525252]/70 mt-[4vh]'></div>
+            <div className='w-full border'></div>
             <div className='mt-4'>
-                <span>Don’t have an account yet? </span>
-                <Link href={'/entryUser/SignUp'} className='text-blue-600 underline'>SignUp</Link>
+                <span>you have existing account? </span>
+                <Link href={'/Auth/SignUp'} className='text-blue-600 underline'>SignUp</Link>
             </div>
 
 

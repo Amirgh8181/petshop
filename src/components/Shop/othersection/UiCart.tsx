@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const UiCart = () => {
@@ -13,9 +14,9 @@ const UiCart = () => {
         <div className='md:text-2xl text-xl'>Made for all lifs’s advantures.</div>
         <div className='md:text-sm text-xs w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
         <div className='w-full flex justify-center'>
-          <button className='w-[70%] bg-transparent border-4 border-white text-white mx-auto 
+          <Link href={'/Shop/All'} className='w-[70%] bg-transparent border-4 border-white text-white mx-auto 
            md:py-1 py-2 rounded-full hover:bg-white hover:text-petBlue
-           transition-all duration-400 md:text-base text-sm'>Collection</button>
+           transition-all duration-400 md:text-base text-sm'>Collection</Link>
         </div>
       </div>
     </div>

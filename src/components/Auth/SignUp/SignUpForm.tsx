@@ -145,7 +145,7 @@ const SignUpForm = () => {
             <div className='w-full border'></div>
             <div className='mt-4'>
                 <span>you have existing account? </span>
-                <Link href={'/entryUser/Login'} className='text-blue-600 underline'>login</Link>
+                <Link href={'/Auth/Login'} className='text-blue-600 underline'>login</Link>
             </div>
         </div>
 

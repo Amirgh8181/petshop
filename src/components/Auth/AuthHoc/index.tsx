@@ -25,7 +25,7 @@ const AuthHoc = ({
                 </div>
                 <div className='space-y-8 w-[60%]'>
                     <div className='flex space-x-4 justify-center items-center bg-white rounded-full w-full'>
-                        <Image src={'/images/AuthPic/google.svg'} alt='google' width={50} height={50} className='self-start' />
+                        <Image src={'/images/AuthPic/google.svg'} alt='google' width={30} height={30} className='self-start' />
                         <div className='text-xl'>{`${authType}`} with google</div>
                     </div>
 
