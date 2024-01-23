@@ -6,6 +6,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { BiLogIn } from "react-icons/bi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import React from 'react'
+import Link from "next/link";
 
 const Profile = () => {
   const { data: session } = useSession()
@@ -24,16 +25,16 @@ const Profile = () => {
       </div>
       <DropdownMenu variant="faded" aria-label="Static Actions">
         <DropdownItem key="Favorite List">
-          <div className="flex items-center space-x-2">
+          <Link href={'/FavoriteList'} className="flex items-center space-x-2">
             <span className="text-2xl"> <FaHeart /> </span>
             <span> Favorite List</span>
-          </div>
+          </Link>
         </DropdownItem>
         <DropdownItem key="Shopping Cart">
-          <div className="flex items-center space-x-2">
+          <Link href={'/Cart'} className="flex items-center space-x-2">
             <span className="text-2xl"> <MdOutlineShoppingCart /> </span>
             <span> Shopping Cart</span>
-          </div>
+          </Link>
         </DropdownItem>
         <DropdownItem key="Log Out" color="danger" className="text-danger">
           <div className="flex items-center space-x-2"  onClick={()=>signOut()}>
