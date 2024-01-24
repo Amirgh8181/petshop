@@ -1,5 +1,5 @@
 
-import { Button } from '@mui/material';
+import Link from 'next/link';
 import React from 'react'
 
 const QuestionText = () => {
@@ -11,7 +11,9 @@ const QuestionText = () => {
              pariatur Excepteur sint.
             </p>
             <div className='w-full md:space-x-4 flex justify-between'>
-                <button className='bg-white text-petBlue rounded-full hover:bg-petBlue hover:text-white transition-all duration-500 md:w-[60%] w-[40%] aspect-[10/3]'>Ask Anything</button>
+                <Link href={'/Question'} 
+                className='bg-white text-petBlue rounded-full hover:bg-petBlue hover:text-white
+                 transition-all duration-500 md:w-[60%] w-[40%] aspect-[10/3] flex items-center justify-center'>Ask Anything</Link>
                 <button className='shadow-xl rounded-full hover:bg-white hover:text-petBlue transition-all duration-500 md:w-[60%] w-[40%] aspect-[10/3]'>learn more {`>`}</button>
             </div>
         </div>

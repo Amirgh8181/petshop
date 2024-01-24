@@ -4,19 +4,21 @@ import { useSearchParams } from 'next/navigation';
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image';
 import { useFavoriteList } from '@/stores/shop/useFavoriteList';
 import { ShopItem } from '@/types';
+import { useCartItems } from '@/stores/shop/useCartItem';
 
 const ProductPage = () => {
     const searchParams = useSearchParams().get('id')
     const { products } = useItemsStore()
-    const { setFavoriteList,FavoriteList } = useFavoriteList()
+    const { setFavoriteList, FavoriteList } = useFavoriteList()
+    
+    const { setCartItem, checkInclude } = useCartItems()
     const ShowProduct = products.find(q => q.id === searchParams) as ShopItem
 
 
-    
 
     return (
         <div className='w-full md:h-[90vh] flex justify-center mt-6'>
@@ -94,14 +96,15 @@ const ProductPage = () => {
                             className='md:w-[calc(50%-5%)] w-[calc(50%-5%)] rounded-full py-2 font-bold md:text-base text-sm bg-petBlue/30
                          text-petBlue border-2 border-petBlue hover:bg-white hover:text-petBlue transition-all
                           duration-400 cursor-pointer flex justify-center items-center space-x-2'>
-                            <span className={FavoriteList.includes(ShowProduct)?'text-red-500 text-xl':"text-xl"}><FaRegHeart /></span>
-                            <span>{FavoriteList.includes(ShowProduct)?"Remove From List":"Add To List"}</span>
+                            <span className={FavoriteList.includes(ShowProduct) ? 'text-red-500 text-xl' : "text-xl"}><FaRegHeart /></span>
+                            <span>{FavoriteList.includes(ShowProduct) ? "Remove From List" : "Add To List"}</span>
                         </div>
-                        <div className='md:w-[calc(50%-5%)] w-[calc(50%-5%)] rounded-full py-2 font-bold md:text-base text-sm bg-petBlue
+                        <div onClick={() => setCartItem(ShowProduct)}
+                            className='md:w-[calc(50%-5%)] w-[calc(50%-5%)] rounded-full py-2 font-bold md:text-base text-sm bg-petBlue
                          text-white border-2 border-petBlue hover:bg-white hover:text-petBlue transition-all
                           duration-400 cursor-pointer flex justify-center items-center space-x-2'>
                             <span className='text-xl'><MdOutlineAddShoppingCart /></span>
-                            <span>Add To Card</span>
+                            <span>{checkInclude ? "Remove From Cart" : "Add To Cart"}</span>
                         </div>
                     </div>
                 </div>

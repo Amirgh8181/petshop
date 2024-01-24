@@ -4,5 +4,14 @@ export interface ShopItem {
     description: string
     price: string
     category: string,
-    image:string
+    image:string,
+   }
+export interface CartItem {
+    id: string
+    title: string
+    description: string
+    price: string
+    category: string,
+    image:string,
+    count:number
    }
