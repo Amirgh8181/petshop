@@ -10,7 +10,6 @@ import Link from "next/link";
 
 const Profile = () => {
   const { data: session } = useSession()
-  console.log(session);
 
   return (
     <Dropdown backdrop="blur">
@@ -18,7 +17,7 @@ const Profile = () => {
         <Avatar size="sm">{session?.user.name}</Avatar>
         <DropdownTrigger>
           <div className="flex items-center cursor-pointer">
-            <span>{session?.user.name}</span>
+            <span>{session?.user?.username}</span>
             <span className="text-2xl"><RiArrowDropDownLine /></span>
           </div>
         </DropdownTrigger>
