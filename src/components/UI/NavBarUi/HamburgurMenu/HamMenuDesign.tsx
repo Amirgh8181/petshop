@@ -51,7 +51,7 @@ const HamMenuDesign = ({ mobileMenu, setMobileMenu }: { mobileMenu: boolean, set
 
             {mobileMenu &&
                 <motion.div
-                    className="w-full h-screen fixed inset-0 bg-blue-900 origin-top"
+                    className="w-full h-screen fixed inset-0 bg-blue-900 origin-top z-40"
                     variants={menuVar}
                     initial='initial'
                     animate='animate'
@@ -64,7 +64,7 @@ const HamMenuDesign = ({ mobileMenu, setMobileMenu }: { mobileMenu: boolean, set
                     >
 
                         <div>
-                            <Logo />
+                            <Logo width={100} height={100}/>
                         </div>
 
                         {/* btn for close hamburgur menu */}
@@ -72,7 +72,7 @@ const HamMenuDesign = ({ mobileMenu, setMobileMenu }: { mobileMenu: boolean, set
                         <motion.div
                             className='
                             aspect-square  h-7 flex justify-center items-center text-2xl
-                          bg-petBlue text-white rounded-lg'
+                          bg-petBlue text-white rounded-lg cursor-pointer'
                             onClick={() => setMobileMenu(!mobileMenu)}
                         >
                             {/* close Icon*/}

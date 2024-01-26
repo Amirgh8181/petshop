@@ -1,0 +1,14 @@
+.authLabel{
+  @apply flex justify-center items-center space-x-1
+}
+.authLabelIcon{
+  @apply text-[#525252] text-xl
+}
+.authLabelText{
+  @apply text-[#525252]
+}
+
+.authErr{
+  @apply text-red-600 ml-2 mt-2 text-xs
+}
+

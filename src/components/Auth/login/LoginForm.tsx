@@ -1,23 +1,31 @@
 "use client"
+
 import { useState } from 'react'
 import Link from 'next/link'
-
+import { useRouter } from 'next/navigation';
+// react hook form
 import { SubmitHandler, useForm } from 'react-hook-form'
-
+//next auth
+import { signIn } from 'next-auth/react';
 // zod
 import { zodResolver } from '@hookform/resolvers/zod';
-
-//component and styles
-import Styles from '../login.module.css'
-//import { loginUserRequest } from '@/lib/login';
 import { LoginSchema } from '@/schema/zodSchema/LoginSchema';
-import { LoginDataType } from '../entrySchemaTypes';
-import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
-import swal from 'sweetalert';
-import { Button, Input } from '@nextui-org/react';
-
+import { LoginDataType } from '@/types/AuthInput';
+//component and styles
+import styles from '../authstyle.module.css'
+import InputErr from '../../UI/Inputs/InputErr';
+import InputLabel from '../../UI/Inputs/InputLabel';
+//next-ui
+import { Button, Input, Spinner } from '@nextui-org/react';
+//icons
 import { MdLockOutline, MdOutlineEmail } from "react-icons/md";
+//sweet alert
+import swal from 'sweetalert';
+
+
+
+import { LoginInput } from '@/types';
+
 
 
 const LoginForm = () => {
@@ -33,18 +41,15 @@ const LoginForm = () => {
     //state
     const [loading, setLoading] = useState(false)
     const router = useRouter()
-
     //submit hadler
     const onSubmit: SubmitHandler<LoginDataType> = async (e) => {
-        console.log(e);
-
+        setLoading(true)
         //next auth
         const req = await signIn('credentials', {
             email: e.email,
             password: e.password,
             redirect: false,
         })
-        console.log(req);
 
         if (req?.ok) {
             swal({
@@ -52,68 +57,70 @@ const LoginForm = () => {
                 title: 'successfull login',
                 timer: 2000,
                 buttons: [false],
-                className: Styles.swal
+                className: styles.swal
             });
             setTimeout(() => {
                 router.push('/')
             }, 3000);
-
-            setLoading(false)
-            reset()
+        } else {
+            swal({
+                icon: "warning",
+                title: 'unsuccessfull login',
+                timer: 2000,
+                buttons: [false],
+                className: styles.swal
+            });
+            setTimeout(() => {
+                window.location.reload()
+            }, 3000);
         }
+        setLoading(false)
+        reset()
     }
 
+    const inputCreateData: LoginInput[] = [
+        { key: "Email", type: "email", icon: <MdOutlineEmail />, registerVal: "email", err: errors.email?.message },
+        { key: "Password", type: "password", icon: <MdLockOutline />, registerVal: "password", err: errors.password?.message }
+    ]
     return (
         <div className="w-full flex flex-col justify-center items-center">
-
+            {
+                loading &&
+                <div className='w-full h-screen fixed inset-0 z-40 bg-petBlue/50 flex flex-col items-center justify-center'>
+                    <Spinner size='lg' />
+                    <div className='text-white'>please wait ...</div>
+                </div>
+            }
             <form className="space-y-8 w-full" onSubmit={handleSubmit(onSubmit)}>
-                <Input
-                    key={"email"}
-                    type={"email"}
-                    label={
-                        <div className='flex justify-center items-center space-x-1'>
-                            <div className='text-[#525252] text-xl'><MdOutlineEmail /></div>
-                            <div className='text-[#525252]'>Email</div>
-                        </div>
-                    }
-                    labelPlacement='inside'
-                    {...register('email')}
-                    className='border border-petBlue rounded-full'
-                    radius='full'                />
                 {
-                    errors.email?.message &&
-                    <span className='text-red-600 ml-2 mt-2 text-xs'>
-                        {errors.email?.message}
-                    </span>
-                }
-                <Input
-                    key={"email"}
-                    type={"password"}
-                    label={
-                        <div className='flex justify-center items-center space-x-1'>
-                            <div className='text-[#525252] text-xl'><MdLockOutline /></div>
-                            <div className='text-[#525252]'>Password</div>
+                    inputCreateData.map(item =>
+                        <div key={item.key}>
+                            <Input
+                                key={item.key}
+                                type={item.type}
+                                label={
+                                    <InputLabel text={item.key}>
+                                        {item.icon}
+                                    </InputLabel>
+                                }
+                                labelPlacement='inside'
+                                {...register(item.registerVal)}
+                                className={styles.input}
+                                radius='full'
+                            />
+                            {item.err &&
+                                <InputErr err={item.err} />
+                            }
                         </div>
-                    }
-                    labelPlacement='inside'
-                    {...register('password')}
-                    className='border border-petBlue rounded-full'
-                    radius='full'                />
-                {
-                    errors.password?.message &&
-                    <span className='text-red-600 ml-2 mt-2 text-xs'>
-                        {errors.password?.message}
-                    </span>
+                    )
                 }
-                <Button disabled={loading} type="submit" className='md:text-xl h-12 bg-petBlue text-white w-full rounded-full'>Submit</Button>
-
+                <Button disabled={loading} type="submit" className={styles.authBtn}>Submit</Button>
             </form>
 
-            <div className='w-full h-[0.5px] border border-[#525252]/70 mt-[4vh]'></div>
-            <div className='w-full border'></div>
+            <div className={styles.authDivider} />
             <div className='mt-4'>
                 <span>you have existing account? </span>
-                <Link href={'/Auth/SignUp'} className='text-blue-600 underline'>SignUp</Link>
+                <Link href={'/Auth/SignUp'} className={styles.authLink}>SignUp</Link>
             </div>
 
 
@@ -122,3 +129,4 @@ const LoginForm = () => {
 }
 
 export default LoginForm;
+

@@ -56,7 +56,7 @@ const NavItem = () => {
                   :
                   `link ${pathname === item.href ?
                     ' text-petBlue border-b-2 border-b-petBlue' :
-                    "text-white hover:text-blue-500 hover:border-b-2 hover:border-b-petBlue transition-colors duration-300"}`
+                    "text-white hover:text-blue-500 hover:border-b-2 hover:border-b-petBlue transition-colors duration-300 cursor-pointer"}`
                 }
                 onClick={() => changeRoute(item.href)}
               >

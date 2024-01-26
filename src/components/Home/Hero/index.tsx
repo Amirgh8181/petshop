@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import HeroText from '../UI/Hero/HeroText'
-import HeroImage from '../UI/Hero/HeroImg'
+import HeroText from '../../UI/Hero/HeroText'
+import HeroImage from '../../UI/Hero/HeroImg'
 import { motion } from 'framer-motion'
 const HeroSection = () => {
 

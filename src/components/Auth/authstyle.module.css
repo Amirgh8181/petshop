@@ -1,0 +1,15 @@
+.swal{
+    @apply text-3xl font-roboto md:p-10 p-4 md:w-auto h-auto w-[60vw]
+}
+.input{
+    @apply border border-petBlue rounded-full
+}
+.authBtn{
+    @apply md:text-xl h-12 bg-petBlue text-white w-full rounded-full
+}
+.authDivider{
+    @apply w-full h-px bg-black/50 mt-[4vh]
+}
+.authLink{
+    @apply text-blue-600 underline underline-offset-2
+}

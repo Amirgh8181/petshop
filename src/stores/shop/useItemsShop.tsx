@@ -1,9 +1,10 @@
 import { create } from "zustand";
 import { ShopItem } from "@/types";
+import { persist } from "zustand/middleware";
 
    // Define the interface of the Cart state
    interface State {
-    products: ShopItem[]
+    products: ShopItem[],
    }
    
    // Initialize a default state
@@ -49,6 +50,13 @@ import { ShopItem } from "@/types";
    }
    
    // Create the store with Zustand, combining the status interface and actions
-   export const useItemsStore = create<State>(() => ({
-    products: INITIAL_STATE.products,
-   }))
+   export const useItemsStore = create<State>()(
+    persist(
+        (set) => ({
+            products: INITIAL_STATE.products,
+        }),
+        {
+            name: "ShopItem"
+        }
+    )
+)

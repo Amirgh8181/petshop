@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import QuestionText from '../UI/QuestionSection/QuestionText';
-import QuestionImage from '../UI/QuestionSection/QuestionImage';
+import QuestionText from '../../UI/QuestionSection/QuestionText';
+import QuestionImage from '../../UI/QuestionSection/QuestionImage';
 const QuestionContainer = () => {
 
     return (

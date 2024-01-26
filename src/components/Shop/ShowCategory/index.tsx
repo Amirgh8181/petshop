@@ -25,7 +25,7 @@ const Category = () => {
             <div>Shop by collection</div>
             <div className='w-full flex justify-center mx-auto md:space-x-4 text-center'>
                 {categDetails.map(item =>
-                    <Link href={`/Shop/${item.type}`} key={item.type}
+                    <Link href={`/Shop/category/${item.type}`} key={item.type}
                         className='group flex flex-col justify-center items-center space-y-2  cursor-pointer'
                     >
                         <Image src={item.image} alt='categ img' width={100} height={100}

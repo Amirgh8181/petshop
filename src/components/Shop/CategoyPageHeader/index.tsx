@@ -38,7 +38,7 @@ const CategoyPageHeader = ({type}:{type:string}) => {
             <div className='flex md:flex-row flex-col md:justify-between items-center space-y-6 md:space-y-0 w-full md:h-12 md:px-8'>
                 <ul className='flex items-center justify-around md:w-[60%] w-full  h-full  md:font-bold'>
                     {categ.map(item =>
-                        <Link href={`/Shop/${item}`} key={item}
+                        <Link href={`/Shop/category/${item}`} key={item}
                             className={type === item ? "text-petBlue underline md:underline-offset-4 underline-offset-2 text-sm md:text-lg cursor-pointer" : 'text-petBlue/70 hover:text-petBlue cursor-pointer hover:underline transition-all duration-400 underline-offset-4 text-sm md:text-lg'}>
                             {item}
                         </Link>

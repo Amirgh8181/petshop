@@ -1,7 +1,7 @@
 "use client"
 import { useItemsStore } from '@/stores/shop/useItemsShop'
 import React from 'react'
-import ProduceCart from './ProduceCart'
+import ProduceCart from '../../UI/ShopItemProduce/ProduceCart'
 import Link from 'next/link'
 
 const ProductPreview = () => {

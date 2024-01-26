@@ -1,6 +1,6 @@
 "use client"
 import CategoyPageHeader from '@/components/Shop/CategoyPageHeader';
-import ProduceCart from '@/components/Shop/ShopItem/ProduceCart';
+import ProduceCart from '@/components/UI/ShopItemProduce/ProduceCart';
 import { useItemsStore } from '@/stores/shop/useItemsShop';
 import { ShopItem } from '@/types';
 import { useEffect, useState } from 'react';

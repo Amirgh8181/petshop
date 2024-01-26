@@ -1,4 +1,3 @@
-import FavoriteList from "@/app/FavoriteList/page";
 import { CartItem, ShopItem } from "@/types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
@@ -8,7 +7,6 @@ import { persist } from "zustand/middleware";
 interface State {
     CartItem: CartItem[]
     totalPrice: number,
-    checkInclude: boolean,
     setCartItem: (arg: ShopItem) => void;
     setIncrement?: (arg: CartItem) => void;
     setDecrement?: (arg: CartItem) => void;
@@ -22,7 +20,6 @@ export const useCartItems = create<State>()(
         (set) => ({
             CartItem: [],
             totalPrice: 0,
-            checkInclude: false,
             setCartItem: (arg) => {
                 const cart = useCartItems.getState().CartItem
                 let totalPri: number = useCartItems.getState().totalPrice;
@@ -46,7 +43,6 @@ export const useCartItems = create<State>()(
                             set({
                                 CartItem: [...cart],
                                 totalPrice: totalPri,
-                                checkInclude: false
                             })
                             return
                         }
@@ -57,7 +53,6 @@ export const useCartItems = create<State>()(
                         set({
                             CartItem: [...cart, { ...arg, count: 1 }],
                             totalPrice: totalPri + argPrice,
-                            checkInclude: true
                         })
                     }
 
@@ -68,7 +63,6 @@ export const useCartItems = create<State>()(
                     set({
                         CartItem: [{ ...arg, count: 1 }],
                         totalPrice: argPrice,
-                        checkInclude: true
                     })
                 }
             },

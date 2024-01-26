@@ -1,5 +1,5 @@
 "use client"
-import ProduceCart from '@/components/Shop/ShopItem/ProduceCart'
+import ProduceCart from '@/components/UI/ShopItemProduce/ProduceCart'
 import { useFavoriteList } from '@/stores/shop/useFavoriteList'
 import React from 'react'
 

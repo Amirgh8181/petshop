@@ -1,8 +1,8 @@
-import AboutUs from '@/components/About-US'
-import BlogPreview from '@/components/BlogPreview'
-import HeroSection from '@/components/Hero'
-import QuestionContainer from '@/components/QuestionSection'
-import ShopPreview from '@/components/ShopPreview'
+import AboutUs from '@/components/Home/About-US'
+import BlogPreview from '@/components/Home/BlogPreview'
+import HeroSection from '@/components/Home/Hero'
+import QuestionContainer from '@/components/Home/QuestionSection'
+import ShopPreview from '@/components/Home/ShopPreview'
 import React from 'react'
 
 const Home = () => {

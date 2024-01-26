@@ -1,5 +1,5 @@
 "use client"
-import Slider from '../UI/ShopPreview/Slider';
+import Slider from '../../UI/ShopPreview/Slider';
 const ShopPreview = () => {
     return (
         <section id="ShopPreview" className='w-full'>

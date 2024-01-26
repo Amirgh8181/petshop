@@ -1,4 +1,4 @@
-import { ClinicsAndSheltersHero } from '@/components/ClinicsAndSheltersHero'
+import { ClinicsAndSheltersHero } from '@/components/UI/ClinicsAndSheltersHero'
 import ClinicAndShelterCard from '@/components/UI/clinicAndShelterCard'
 import React from 'react'
 

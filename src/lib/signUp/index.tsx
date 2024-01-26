@@ -1,6 +1,6 @@
 "use server"
 
-import { SignUpDataType } from "@/components/Auth/entrySchemaTypes";
+import { SignUpDataType } from "@/types/AuthInput";
 import axios from "axios";
 
 

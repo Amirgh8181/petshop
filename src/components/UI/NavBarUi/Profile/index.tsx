@@ -10,7 +10,8 @@ import Link from "next/link";
 
 const Profile = () => {
   const { data: session } = useSession()
-
+  console.log(session);
+  
   return (
     <Dropdown backdrop="blur">
       <div className="flex items-center space-x-2">

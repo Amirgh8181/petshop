@@ -1,5 +1,5 @@
 import React from 'react'
-import BlogPreviewUi from '../UI/BlogPreview'
+import BlogPreviewUi from '../../UI/BlogPreview'
 const BlogPreview = () => {
     return (
         <section id="BlogPreview">
