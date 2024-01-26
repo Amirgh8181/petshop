@@ -2,10 +2,13 @@ import ShopHero from '@/components/Shop/ShopHero'
 import ProductPreview from '@/components/Shop/ShopItem'
 import Category from '@/components/Shop/ShowCategory'
 import OtherSection from '@/components/Shop/othersection'
+import getShopItems from '@/lib/getShopItems'
 import React from 'react'
 
-const Shop = () => {
-
+const Shop = async() => {
+  const req=await getShopItems()
+  console.log(req);
+  
   return (
     <div className='space-y-10'>
 
