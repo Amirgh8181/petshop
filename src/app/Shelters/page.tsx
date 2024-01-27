@@ -21,7 +21,7 @@ const Shelters = async () => {
     return (
         <div>
             <div>
-                <ClinicsAndSheltersHero img={'/images/Shelters/shelterhero2.jpg'} />
+                <ClinicsAndSheltersHero img={'/images/Shelters/hero-pic.png'} />
             </div>
             <div className='w-full min-h-screen mt-6'>
                 <ClinicAndShelterCard href='/Shelters/' data={req.data} />
