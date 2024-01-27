@@ -5,6 +5,7 @@ import React from 'react'
 
 const FavoriteList = () => {
 const {FavoriteList}=useFavoriteList()
+console.log(FavoriteList);
 
 
   return (

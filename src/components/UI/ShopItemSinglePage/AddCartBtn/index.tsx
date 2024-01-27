@@ -6,7 +6,7 @@ import { MdOutlineAddShoppingCart } from 'react-icons/md'
 
 const AddCartBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
     const { setCartItem,CartItem } = useCartItems()
-    const chekIncludes=CartItem.find(q=>q.id===itemDetails.id)
+    const chekIncludes=CartItem.find(q=>q._id===itemDetails._id)
     
     return (
         <>

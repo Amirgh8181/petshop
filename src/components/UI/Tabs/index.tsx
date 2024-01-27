@@ -3,6 +3,8 @@ import { Tabs, Tab } from "@nextui-org/react";
 import { tabsDetailstype } from '@/types';
 
 const TabsContainer = ({ tabsDetails }: { tabsDetails: tabsDetailstype[] }) => {
+  console.log(tabsDetails);
+
   return (
     <Tabs
       aria-label="Options"

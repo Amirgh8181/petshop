@@ -36,6 +36,34 @@ const QuestionContainer = ({ questionNumber }: { questionNumber: number }) => {
     const router = useRouter()
     const { QuestionScore, setQuestionState, setQuestionScore } = useQuestionScore()
     const [disableFlag, setDisableFlag] = useState<boolean>(false)
+    let animal:string=""
+
+    const showAnimal = (arg: number) => {
+        if (arg = 100) {
+            animal='cat'
+            console.log('height');
+            
+        }
+        else if (arg <= 200 && arg > 100) {
+            animal='dog'
+            console.log('height');
+
+        }
+        else if (arg <= 300 && arg > 200) {
+            animal='hamster'
+            console.log('height');
+
+        }
+
+        else if (arg <= 400 && arg > 300) {
+            animal='parrot'
+            console.log('height');
+
+        }
+        console.log(animal);
+        
+    }
+
 
     const handleQusetionRadio = (questionValue: number) => {
         setDisableFlag(true)
@@ -47,6 +75,7 @@ const QuestionContainer = ({ questionNumber }: { questionNumber: number }) => {
         }
         if (questionNumber + 1 === 21) {
             setQuestionScore()
+            showAnimal(QuestionScore)
         }
 
     }
@@ -67,6 +96,8 @@ const QuestionContainer = ({ questionNumber }: { questionNumber: number }) => {
                 <div className='w-full flex flex-col items-center space-y-4'>
                     <div className='text-lg font-bold'>your score:</div>
                     <div className='text-lg font-bold'>{QuestionScore}</div>
+                    <div className='text-lg font-bold'>your best animal:{animal}</div>
+
                     <Link href={'/'} className='w-[80%] py-2 bg-green-500 rounded-full text-white text-center text-xl hover:bg-green-600 transition-all duration-400 '>
                         go to Home
                     </Link>

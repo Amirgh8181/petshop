@@ -1,9 +1,11 @@
+"use client"
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import ProduceCard from './ProduceCard'
+import { ShopItem } from '@/types'
 
 
-const Slider = () => {
+const Slider = ({data}:{data:ShopItem[]}) => {
     const carousel = useRef<HTMLDivElement>(null)
     const [width, setWidth] = useState<number>(0)
 
@@ -17,8 +19,8 @@ const Slider = () => {
 
     return (
         < motion.div ref={carousel} className="overflow-hidden cursor-grab" >
-            <motion.div drag="x" dragConstraints={{ right: 0, left: -width }} className="flex items-center gap-4 md:gap-0">
-                <ProduceCard />
+            <motion.div drag="x" dragConstraints={{ right: 0, left: -width }} className="flex items-center gap-4 ml-4">
+                <ProduceCard data={data}/>
             </motion.div>
         </motion.div>
     )

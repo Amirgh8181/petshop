@@ -1,10 +1,9 @@
 import axios from "axios";
-import { getServerSession } from "next-auth";
-import { getSession } from "next-auth/react";
 
-const getShopItems = async () => {
 
+const GetShopItems = async () => {
     try {
+
         const req = await axios.get("http://localhost:5000/api/products",
             {
                 headers: {
@@ -12,14 +11,13 @@ const getShopItems = async () => {
                 }
             }
         )
-
         console.log(req.data);
-
-        return req;
+        
+        return req.data
     }
     catch (e) {
-        console.log('some thing went wrong !')
+        console.log(e)
     }
 };
 
-export default getShopItems;
+export default GetShopItems;

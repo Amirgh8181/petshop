@@ -13,11 +13,11 @@ const ProduceCart = ({ showProduct }: { showProduct: ShopItem[] }) => {
     <div className='flex flex-wrap justify-center w-full py-6 md:gap-6 gap-4'>
       {
         showProduct?.map(item =>
-          <Link href={`/Shop/${item.id}`} key={item.id} className='
-          md:w-[25.1%] w-[45%] aspect-[9/11] flex justify-center items-center mt-8 shadow-lg md:rounded-[3rem] rounded-3xl border-1.5 border-petBlue self-start
+          <Link href={`/Shop/${item._id}`} key={item._id} className='
+          md:w-[25.1%] w-[45%] aspect-[9/11] flex justify-center items-center mt-8 shadow-lg md:rounded-[3rem] rounded-3xl border-1.5 border-petBlue
           '>
 
-            <Card key={item.id}
+            <Card key={item._id}
               isPressable
               isHoverable
               className='w-full h-full md:rounded-[3rem] rounded-3xl p-4'
@@ -26,13 +26,13 @@ const ProduceCart = ({ showProduct }: { showProduct: ShopItem[] }) => {
                 <Image
                   width={500}
                   height={500}
-                  alt={item.title}
-                  className="w-[90%]  aspect-square"
-                  src={item.image}
+                  alt={item.name}
+                  className="w-[90%]  aspect-square md:rounded-[3rem] rounded-3xl shadow-xl"
+                  src={item.attachmentFile}
                 />
               </CardBody>
               <CardFooter className="text-small flex flex-col items-center space-y-2">
-                <b>{item.title}</b>
+                <b>{item.name}</b>
                 <p className="text-default-500">{item.price}</p>
               </CardFooter>
             </Card>

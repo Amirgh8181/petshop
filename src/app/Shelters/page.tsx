@@ -1,15 +1,30 @@
 import { ClinicsAndSheltersHero } from '@/components/UI/ClinicsAndSheltersHero'
 import ClinicAndShelterCard from '@/components/UI/clinicAndShelterCard'
+import axios from 'axios'
 import React from 'react'
 
-const Shelters = () => {
+const Shelters = async () => {
+    const req = await axios.get("http://localhost:5000/api/shelters",
+        {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+    )
+    if (!req.data) {
+        throw new Error("somthin went wrong")
+    }
+    console.log('kk');
+    console.log(req.data);
+
+
     return (
         <div>
             <div>
-                <ClinicsAndSheltersHero img={'/images/Shelters/sheltersHero.png'} />
+                <ClinicsAndSheltersHero img={'/images/Shelters/shelterhero2.jpg'} />
             </div>
             <div className='w-full min-h-screen mt-6'>
-                <ClinicAndShelterCard section='shelters'/>
+                <ClinicAndShelterCard href='/Shelters/' data={req.data} />
             </div>
         </div>
     )

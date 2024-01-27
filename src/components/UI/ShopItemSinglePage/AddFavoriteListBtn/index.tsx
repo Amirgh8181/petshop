@@ -6,7 +6,7 @@ import { FaRegHeart } from 'react-icons/fa6'
 
 const AddFavoriteListBtn = ({itemDetails}:{itemDetails:ShopItem}) => {
     const { setFavoriteList, FavoriteList } = useFavoriteList()
-    const chekIncludes=FavoriteList.find(q=>q.id===itemDetails.id)
+    const chekIncludes=FavoriteList.find(q=>q._id===itemDetails._id)
     
     return (
         <>

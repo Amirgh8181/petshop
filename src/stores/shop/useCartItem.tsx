@@ -8,9 +8,9 @@ interface State {
     CartItem: CartItem[]
     totalPrice: number,
     setCartItem: (arg: ShopItem) => void;
-    setIncrement?: (arg: CartItem) => void;
-    setDecrement?: (arg: CartItem) => void;
-    setDeleteItem?: (arg: CartItem) => void;
+    setIncrement: (arg: string) => void;
+    setDecrement: (arg: string) => void;
+    setDeleteItem: (arg: string) => void;
 }
 
 
@@ -35,7 +35,7 @@ export const useCartItems = create<State>()(
                     //hazf mikone va gheymatesham az totalprice kam mikone va ba flag neshoon mide ke item dar 
                     //list voojood dare
                     for (let i = 0; i < cart.length; i++) {
-                        if (arg.id === cart[i].id) {
+                        if (arg._id === cart[i]._id) {
                             isIncludeItem = true;
                             itemPrice = Number(cart[i].price.replace(/[^0-9\.]+/g, ""))
                             totalPri -= cart[i].count * itemPrice
@@ -69,15 +69,16 @@ export const useCartItems = create<State>()(
             setIncrement: (arg) => {
                 const cart = useCartItems.getState().CartItem
                 let totalPri: number = useCartItems.getState().totalPrice;
-                const argPrice: number = Number(arg.price.replace(/[^0-9\.]+/g, ""));
+                let argPrice: number
 
                 for (let i = 0; i < cart.length; i++) {
-                    if (arg.id === cart[i].id) {
+                    if (arg === cart[i]._id) {
                         cart[i].count++;
-                        totalPri+=argPrice
+                        argPrice = Number(cart[i].price.replace(/[^0-9\.]+/g, ""));
+                        totalPri += argPrice
                         set({
                             CartItem: [...cart],
-                            totalPrice:totalPri
+                            totalPrice: totalPri
                         })
                         return
                     }
@@ -86,21 +87,22 @@ export const useCartItems = create<State>()(
             setDecrement: (arg) => {
                 const cart = useCartItems.getState().CartItem
                 let totalPri: number = useCartItems.getState().totalPrice;
-                const argPrice: number = Number(arg.price.replace(/[^0-9\.]+/g, ""));
+                let argPrice: number;
 
                 for (let i = 0; i < cart.length; i++) {
-                    if (arg.id === cart[i].id) {
+                    if (arg === cart[i]._id) {
+                        argPrice = Number(cart[i].price.replace(/[^0-9\.]+/g, ""));
                         if (cart[i].count === 1) {
-                            totalPri-=argPrice
+                            totalPri -= argPrice
                             cart.splice(i, 1)
                         } else {
-                            totalPri-=argPrice
+                            totalPri -= argPrice
                             cart[i].count--;
                         }
 
                         set({
                             CartItem: [...cart],
-                            totalPrice:totalPri
+                            totalPrice: totalPri
                         })
                         return
                     }
@@ -109,10 +111,11 @@ export const useCartItems = create<State>()(
             setDeleteItem: (arg) => {
                 const cart = useCartItems.getState().CartItem
                 let totalPri: number = useCartItems.getState().totalPrice;
-                const argPrice: number = Number(arg.price.replace(/[^0-9\.]+/g, ""));
+                let argPrice: number;
 
                 for (let i = 0; i < cart.length; i++) {
-                    if (arg.id === cart[i].id) {
+                    if (arg === cart[i]._id) {
+                        argPrice = Number(cart[i].price.replace(/[^0-9\.]+/g, ""));
                         totalPri -= cart[i].count * argPrice
                         cart.splice(i, 1)
                         set({
