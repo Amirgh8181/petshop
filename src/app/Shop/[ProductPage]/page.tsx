@@ -1,24 +1,15 @@
 import ShopItemSinglePageContainer from '@/components/ShopItemSinglePage';
+import getSingleShopItem from '@/lib/getSingleShopItem';
 import axios from 'axios';
-import Image from 'next/image';
 
 
 const ProductPage = async ({ params }: { params: { ProductPage: string } }) => {
-    const req = await axios.get(`http://localhost:5000/api/products/${params.ProductPage}`,
-        {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-    )
-
-    if (!req.data) {
-        throw new Error("somthing went wrong")
-    }
-
+    
+    const req = await getSingleShopItem(params.ProductPage)
+    
     return (
         <>
-            <ShopItemSinglePageContainer product={req.data} />
+            <ShopItemSinglePageContainer product={req} />
         </>
     )
 }

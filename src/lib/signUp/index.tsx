@@ -3,9 +3,6 @@
 import { SignUpDataType } from "@/types/AuthInput";
 import axios from "axios";
 
-
-
-
 const url = process.env.CLIENT_SOURCE_URL as string
 
 export async function signUpUser(userDetails: SignUpDataType) {

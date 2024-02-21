@@ -1,23 +1,25 @@
 "use client"
 import { useState } from "react";
-import HamburgurBtn from "./HamburgurBtn";
-import HamMenuDesign from "./HamMenuDesign";
+import OpenHamburgurMenuBtn from "./HamburgurBtn";
+import HamMenuUi from "./HamMenu";
+import { AnimatePresence } from "framer-motion";
+
 const HamburgurMenu = () => {
     const [mobileMenu, setMobileMenu] = useState<boolean>(false)
 
     const setShowMobileMenu = (): void => {
         setMobileMenu(!mobileMenu)
     }
-    
-
-    
 
     return (
         <div>
 
-            <HamburgurBtn setMobileMenu={setShowMobileMenu} />
-            <HamMenuDesign mobileMenu={mobileMenu} setMobileMenu={setShowMobileMenu} />
-
+            <OpenHamburgurMenuBtn setMobileMenu={setShowMobileMenu} />
+            <AnimatePresence>
+                {mobileMenu &&
+                    <HamMenuUi setMobileMenu={setShowMobileMenu} />
+                }
+            </AnimatePresence>
         </div>
     )
 }

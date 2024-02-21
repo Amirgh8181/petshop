@@ -1,5 +1,5 @@
+import { RedirectButtonBgTransParent } from '@/components/UI/Buttons/Buttons'
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 
 const UiCart = () => {
@@ -11,12 +11,10 @@ const UiCart = () => {
       </div>
       <div className='flex flex-col items-center text-center md:text-left md:justify-center md:items-start
         md:w-1/2 max-h-full h-full space-y-4 p-4 text-white'>
-        <div className='md:text-2xl text-xl'>Made for all lifs’s advantures.</div>
-        <div className='md:text-sm text-xs w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+        <h3 className='md:text-2xl text-xl'>Made for all lifs’s advantures.</h3>
+        <p className='md:text-sm text-xs w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
         <div className='w-full flex justify-center'>
-          <Link href={'/Shop/category/All'} className='w-[70%] bg-transparent border-4 border-white text-white mx-auto 
-           md:py-1 py-2 rounded-full hover:bg-white hover:text-petBlue
-           transition-all duration-400 md:text-base text-sm text-center'>Collection</Link>
+          <RedirectButtonBgTransParent content='Collection' size='w-[60%] lg:w-[40%] aspect-[9/2]' redirectLink='/Shop/category/All'/>
         </div>
       </div>
     </div>

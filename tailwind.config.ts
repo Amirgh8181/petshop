@@ -17,7 +17,9 @@ const config: Config = {
       'xl': '1280px',
       '2xl': '1536px',
     },
+    
     extend: {
+      
       colors:{
         petBlue:"#575CEE",
         petBg:"#EFF1FD"

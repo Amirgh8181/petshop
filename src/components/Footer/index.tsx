@@ -3,6 +3,7 @@ import { TiSocialTwitter } from "react-icons/ti";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import Image from 'next/image';
+import Logo from '../UI/Logo';
 const Footer = () => {
     const icons = [
         { icon: <FaPhone />, style: "text-2xl hover:text-green-500 cursor-pointer" },
@@ -11,10 +12,12 @@ const Footer = () => {
         { icon: <FaWhatsapp />, style: "text-3xl hover:text-green-400 cursor-pointer" },
     ]
     return (
-        <div className='w-full flex flex-col md:flex-row md:justify-between items-center md:px-12 py-4 min-h-28 bg-petBlue md:space-y-0 space-y-10'>
-            
+        <footer 
+        className='w-full flex flex-col md:flex-row md:justify-between items-center 
+        md:px-12 py-4 min-h-28 bg-petBlue md:space-y-0 space-y-10 mt-6'>
+
             <div className='flex items-center'>
-                <Image src={'/images/logo/logo-text-white.png'} alt='logo' width={175} height={100} priority={true} />
+                <Logo height={100} type='white' width={175} />
                 <div className='h-16 border-l border-l-white ml-3 space-y-2 pl-6'>
                     <div className='flex space-x-3 text-white text-lg'>
                         <div>Support</div>
@@ -23,7 +26,7 @@ const Footer = () => {
                     <div className='text-sm text-[#FFFFFF]'>2023 Dev Ventures Project</div>
                 </div>
             </div>
-            
+
             <div className='md:mr-8'>
                 <div className='flex items-center justify-between text-white space-x-8'>
                     {icons.map((item, index) =>
@@ -34,7 +37,7 @@ const Footer = () => {
                     Support DevVentures@Gmail.com
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

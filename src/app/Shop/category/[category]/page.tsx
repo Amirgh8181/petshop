@@ -1,7 +1,6 @@
-"use client"
 import CategoyPageHeader from '@/components/Shop/CategoyPageHeader';
-import ProduceCart from '@/components/UI/ShopItemProduce/ProduceCart';
-import { useItemsShop } from '@/stores/shop/useItemsShop';
+import ProduceCart from '@/components/UI/CartProduce/ProduceCart';
+import getShopItems from '@/lib/getShopItems';
 import { ShopItem } from '@/types';
 import { useEffect, useState } from 'react';
 
@@ -10,26 +9,20 @@ interface categprops {
         category: string,
     }
 }
-const Category = ({params}:categprops) => {
+const Category =async ({params}:categprops) => {
     const {category}=params
-    
-    const [data, setData] = useState<ShopItem[]>([])
-    const { products } = useItemsShop()
-
-    useEffect(() => {
-        setData(
-            category === 'All'
-                ? products
-                : products.filter(q => q.category === category)
-        )
-    }, [category, products])
+    const request:ShopItem[]=await getShopItems()
+    const data=category === 'All'
+    ? request
+    : request.filter(q => q.category === category)
+   
     return (
         <div>
         <div className='w-full mt-6'>
             <CategoyPageHeader type={category}/>
         </div>
-        <div>
-            <ProduceCart showProduct={data}/>
+        <div className='flex flex-wrap w-full justify-around gap-8'>
+            <ProduceCart showProduct={data} type='normal'/>
         </div >
     </div>
     )

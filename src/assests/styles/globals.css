@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
   @apply p-0 m-0 min-w-0 box-border;
 }
@@ -9,5 +10,37 @@ html,
 body {
   scroll-behavior: smooth;
   background-color: rgb(200, 225, 241);
+  font-size: 16px;
 }
 
+nextjs-portal {
+  display: none;
+}
+
+
+@layer base {
+  h1 {
+    @apply md:text-7xl text-5xl 2xl:text-9xl  font-semibold
+  }
+  h2 {
+    @apply md:text-5xl text-3xl 2xl:text-7xl font-semibold
+    }
+  h3 {
+    @apply md:text-4xl text-2xl 2xl:text-6xl font-semibold
+    }
+  h4 {
+    @apply md:text-3xl text-xl 2xl:text-5xl font-semibold
+    }
+  h5 {
+    @apply text-xl font-semibold
+    }
+  h6 {
+    @apply md:text-lg text-sm 2xl:text-2xl  font-semibold
+    }
+}
+
+@layer components{
+  .heroSection{
+    @apply md:w-1/2 md:h-full w-full h-1/2
+  }
+}

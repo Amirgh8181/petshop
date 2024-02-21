@@ -1,21 +1,20 @@
-"use client"
 
 import { IoMenu } from "react-icons/io5"
 
 
 
-const HamburgurBtn = ({setMobileMenu}:{setMobileMenu:()=>void}) => {
+const OpenHamburgurMenuBtn = ({ setMobileMenu }: { setMobileMenu: () => void }) => {
 
     return (
         <div
-            className='
-    aspect-square h-7 flex justify-center items-center text-2xl
-  bg-petBlue text-white rounded-lg'
             onClick={() => setMobileMenu()}
+            className='
+                aspect-square h-7 flex justify-center items-center text-2xl
+              bg-petBlue text-white rounded-lg'
         >
 
             <IoMenu />
         </div>)
 }
 
-export default HamburgurBtn
+export default OpenHamburgurMenuBtn

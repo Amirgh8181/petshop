@@ -1,11 +1,11 @@
 "use client"
 import Logo from '../../Logo'
-import NavItem from '../NavItem'
+import NavBar from '../NavItem';
 import { AnimatePresence, motion } from 'framer-motion'
 import { AiOutlineClose } from "react-icons/ai";
 
 
-const HamMenuDesign = ({ mobileMenu, setMobileMenu }: { mobileMenu: boolean, setMobileMenu: (arg: boolean) => void }) => {
+const HamMenuUi = ({ setMobileMenu }: { setMobileMenu: () => void }) => {
     const menuVar = {
         initial: {
             scaleY: 0
@@ -47,9 +47,7 @@ const HamMenuDesign = ({ mobileMenu, setMobileMenu }: { mobileMenu: boolean, set
 
 
     return (
-        <AnimatePresence>
 
-            {mobileMenu &&
                 <motion.div
                     className="w-full h-screen fixed inset-0 bg-blue-900 origin-top z-40"
                     variants={menuVar}
@@ -64,7 +62,7 @@ const HamMenuDesign = ({ mobileMenu, setMobileMenu }: { mobileMenu: boolean, set
                     >
 
                         <div>
-                            <Logo width={100} height={100}/>
+                            <Logo width={150} height={150} type='white'/>
                         </div>
 
                         {/* btn for close hamburgur menu */}
@@ -73,7 +71,7 @@ const HamMenuDesign = ({ mobileMenu, setMobileMenu }: { mobileMenu: boolean, set
                             className='
                             aspect-square  h-7 flex justify-center items-center text-2xl
                           bg-petBlue text-white rounded-lg cursor-pointer'
-                            onClick={() => setMobileMenu(!mobileMenu)}
+                            onClick={() => setMobileMenu()}
                         >
                             {/* close Icon*/}
 
@@ -87,14 +85,12 @@ const HamMenuDesign = ({ mobileMenu, setMobileMenu }: { mobileMenu: boolean, set
                         className='w-full h-screen flex justify-center mt-20 text-2xl'
                         variants={childVariant}
                     >
-                        <NavItem />
+                        <NavBar />
                     </motion.div>
 
                 </motion.div>
-            }
-        </AnimatePresence>
     )
 }
 
 
-export default HamMenuDesign;
+export default HamMenuUi;

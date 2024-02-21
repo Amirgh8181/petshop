@@ -1,46 +1,61 @@
 import Image from 'next/image'
 
-const HeroImage = () => {
+
+interface HeroImage {
+    mainImage: string,
+    width: string,
+    animateImg: boolean,
+    animateImg1?: string,
+    animateImg2?: string
+}
+const HeroImage = ({ mainImage, width, animateImg, animateImg1, animateImg2 }: HeroImage) => {
 
     return (
-        <div className='w-full h-full flex justify-center items-center relative inset-0'>
+        <div className='heroSection'>
 
-            <div className='md:absolute flex justify-center items-center'>
-                <div className='relative md:left-[5vw] md:top-[20vh] left-[20vw] top-[10vh]'>
-                    <Image src={'/images/Hero/Dog-left.png'} alt='hero-dog' width={75} height={75} priority={true} quality={100}
-                        className='relative    2xl:top-44 md:left-9 z-20 aspect-square rounded-full animate-bounce'
-                    />
-                </div>
-                <div>
-                    <Image src={'/images/Hero/hero-big.png'} alt='hero-dog' width={700} height={700} priority={true} quality={100}
-                        className='w-[80%] h-[80%] mx-auto md:w-[100%] md:h-[100%]'
-                    />
-                </div>
-                <div className='relative md:right-[8vw] right-[20%]'>
-                    <Image src={'/images/Hero/Cat-Right.png'} alt='hero-dog' width={75} height={75} priority={true} quality={100}
-                        className='z-20 aspect-square rounded-full animate-bounce'
-                    />
-                </div>
+            <div className='w-full h-full relative flex justify-center items-center px-4'>
 
+                <Image
+                    src={mainImage}
+                    alt='hero-pic'
+                    width={500}
+                    height={500}
+                    priority={true}
+                    quality={100}
+                    className={`${width} aspect-square`}
+                />
+                {
+                    animateImg &&
+                    <div className='absolute md:w-[65%] w-[70%] h-[60%] flex justify-between items-end'>
+
+                        <div className='absolute right-0 max-w-40 flex justify-center items-center 2xl:p-16
+                         md:p-8 p-6'
+                        >
+                            <Image
+                                src={animateImg1 as string}
+                                alt='animate-hero-pic1'
+                                width={75}
+                                height={75}
+                                className='aspect-square absolute animate-bounce'
+                            />
+                        </div>
+
+                        <div className='absolute left-0 max-w-40 flex justify-center items-center 2xl:p-16
+                         md:p-8 p-6'
+                        >
+                            <Image
+                                src={animateImg2 as string}
+                                alt='animate-hero-pic2'
+                                width={75}
+                                height={75}
+                                className='aspect-square absolute animate-bounce delay-1000'
+                            />
+                        </div>
+                    </div>
+                }
             </div>
-
-
         </div>
     )
 }
 
 export default HeroImage
-
-
-/*
-
-                    <Image src={'/images/Hero/smal-dog.jfif'} alt='hero-dog' width={75} height={75} priority={true} quality={100}
-                        className='aspect-square rounded-full animate-bounce'
-                    /> 
-                    
-
-                                        <Image src={'/images/Hero/smal-cat.jfif'} alt='hero-dog' width={75} height={75} priority={true} quality={100}
-                        className='aspect-square rounded-full animate-bounce'
-                    />
-
-*/

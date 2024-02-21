@@ -1,0 +1,20 @@
+
+.swiper{
+    @apply mt-6 w-full h-[55%]
+}
+.swiper-slide{
+    @apply w-[34%] h-full 
+}
+.swiper-button-next,
+.swiper-button-prev {
+    @apply bg-petBlue/60 text-white md:px-8 px-6 align-middle absolute z-30 top-[1.35rem] min-h-full hover:bg-petBlue/80 transition-all duration-400
+}
+.swiper-button-next{
+    @apply right-0 md:rounded-tr-[3rem] md:rounded-br-[3rem] rounded-tr-3xl rounded-br-3xl
+
+}
+
+.swiper-button-prev{
+    @apply left-0 md:rounded-tl-[3rem] md:rounded-bl-[3rem] rounded-tl-3xl rounded-bl-3xl
+
+}

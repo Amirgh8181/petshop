@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const GetShopItems = async () => {
+const getShopItems = async () => {
     try {
 
         const req = await axios.get("http://localhost:5000/api/products",
@@ -10,9 +10,7 @@ const GetShopItems = async () => {
                     "Content-Type": "application/json"
                 }
             }
-        )
-        console.log(req.data);
-        
+        )        
         return req.data
     }
     catch (e) {
@@ -20,4 +18,4 @@ const GetShopItems = async () => {
     }
 };
 
-export default GetShopItems;
+export default getShopItems;

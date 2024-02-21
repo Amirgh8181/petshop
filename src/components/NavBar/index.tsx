@@ -11,12 +11,11 @@ import Profile from '../UI/NavBarUi/Profile'
 const NavBar = () => {
     const mdScreen = useMediaQuery('(min-width:768px)');
     const { data: sesion } = useSession()
-    console.log(sesion);
 
     return (
-        <div className='w-full flex justify-between md:px-10 px-4  items-center fixed top-0 z-40 bg-white h-16'>
+        <nav className='w-full flex justify-between md:px-10 px-4  items-center fixed top-0 z-40 bg-white h-16'>
             <div>
-                <Logo width={150} height={150}/>
+                <Logo width={150} height={150} type='black'/>
             </div>
             <div className='hidden md:block'>
                 {mdScreen &&
@@ -34,7 +33,7 @@ const NavBar = () => {
                     </div>
                 }
             </div>
-        </div>
+        </nav>
     )
 }
 
